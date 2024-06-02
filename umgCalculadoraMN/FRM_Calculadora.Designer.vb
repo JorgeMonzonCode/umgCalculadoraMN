@@ -229,6 +229,7 @@ Partial Class FRM_Calculadora
         txt_log.Multiline = True
         txt_log.Name = "txt_log"
         txt_log.ReadOnly = True
+        txt_log.ScrollBars = ScrollBars.Both
         txt_log.Size = New Size(277, 153)
         txt_log.TabIndex = 24
         ' 
