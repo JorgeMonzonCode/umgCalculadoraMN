@@ -99,7 +99,13 @@
             Write_log("Cero en la columna 1 fila 2")
             Write_log("F2 = F2 " + IIf(vSigno >= 0, "-", "+") + Replace(_x2.ToString, "-", "") + "/" + Replace(_x1.ToString, "-", "") + " F1")
             Write_log("")
+
             Dim factor As Double = Math.Abs(_x2 / _x1)
+            If (_x1 = 0) Then
+                Write_log("Error denominador es Cero")
+                MsgBox("Error denominador es Cero")
+                Exit Try
+            End If
 
             _x2 = FormatNumber(_x2 + IIf(vSigno >= 0, -factor * _x1, +factor * _x1), 4)
             _y2 = FormatNumber(_y2 + IIf(vSigno >= 0, -factor * _y1, +factor * _y1), 4)
@@ -115,6 +121,11 @@
             Write_log("")
 
             factor = Math.Abs(_x3 / _x1)
+            If (_x1 = 0) Then
+                Write_log("Error denominador es Cero")
+                MsgBox("Error denominador es Cero")
+                Exit Try
+            End If
 
             _x3 = FormatNumber(_x3 + IIf(vSigno >= 0, -factor * _x1, +factor * _x1), 4)
             _y3 = FormatNumber(_y3 + IIf(vSigno >= 0, -factor * _y1, +factor * _y1), 4)
@@ -130,6 +141,11 @@
             Write_log("")
 
             factor = Math.Abs(_y3 / _y2)
+            If (_y2 = 0) Then
+                Write_log("Error denominador es Cero")
+                MsgBox("Error denominador es Cero")
+                Exit Try
+            End If
 
             _x3 = FormatNumber(_x3 + IIf(vSigno >= 0, -factor * _x2, +factor * _x2), 4)
             _y3 = FormatNumber(_y3 + IIf(vSigno >= 0, -factor * _y2, +factor * _y2), 4)
@@ -161,10 +177,25 @@
 
             txt_RZ.Text = FormatNumber(_n3 / _z3, 4).ToString
             Write_log("Determino el valor de Z: " + txt_RZ.Text)
+            If (_z3 = 0) Then
+                Write_log("Error denominador es Cero")
+                MsgBox("Error denominador es Cero")
+                Exit Try
+            End If
             txt_RY.Text = FormatNumber(((_n2 - _z2 * (_n3 / _z3)) / _y2), 4).ToString
             Write_log("Determino el valor de Y: " + txt_RY.Text)
+            If (_y2 = 0) Then
+                Write_log("Error denominador es Cero")
+                MsgBox("Error denominador es Cero")
+                Exit Try
+            End If
             txt_RX.Text = FormatNumber(((_n1 - _y1 * ((_n2 - _z2 * (_n3 / _z3)) / _y2) - _z1 * (_n3 / _z3)) / _x1), 4).ToString
             Write_log("Determino el valor de X: " + txt_RX.Text)
+            If (_x1 = 0) Then
+                Write_log("Error denominador es Cero")
+                MsgBox("Error denominador es Cero")
+                Exit Try
+            End If
         Catch ex As Exception
             Write_log("Se detuvo la ejecucion de forma inesperada........ " + ex.Message)
             MsgBox("Ocurrio un error inesperado intente mas tarde." + ex.Message)
