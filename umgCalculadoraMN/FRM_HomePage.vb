@@ -11,4 +11,12 @@
             MsgBox("Ocurrio un error inesperado intente mas tarde.")
         End Try
     End Sub
+
+    Private Sub btn_Documentacion_Click(sender As Object, e As EventArgs) Handles btn_Documentacion.Click
+        Try
+            FRM_Instrucciones.Show()
+        Catch ex As Exception
+            MsgBox("Ocurrio un error inesperado intente mas tarde.")
+        End Try
+    End Sub
 End Class

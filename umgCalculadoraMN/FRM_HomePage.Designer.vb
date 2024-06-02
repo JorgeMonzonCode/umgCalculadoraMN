@@ -161,9 +161,9 @@ Partial Class FRM_HomePage
         Label7.ForeColor = Color.White
         Label7.Location = New Point(61, 316)
         Label7.Name = "Label7"
-        Label7.Size = New Size(200, 15)
+        Label7.Size = New Size(199, 15)
         Label7.TabIndex = 9
-        Label7.Text = "(Resolucion de ecuaciones lineales)"
+        Label7.Text = "(Método de eliminación Gaussiana)"
         ' 
         ' Label8
         ' 
